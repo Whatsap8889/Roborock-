@@ -3,36 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Traitement du Remboursement</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Roborock - Produits Officiels</title>
     <style>
-        body {
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
             font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
         }
-        .loader {
-            border: 6px solid #f3f3f3;
-            border-top: 6px solid #3498db;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            animation: spin 1s linear infinite;
+
+        /* Général */
+        body {
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
         }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        header {
+            background: #fff;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        nav ul li:hover {
+            color: #e74c3c;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('https://fr.roborock.com/assets/img/banner.jpg') no-repeat center center/cover;
+            height: 600px;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+        }
+
+        .hero button {
+            padding: 10px 20px;
+            background-color: #e74c3c;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            margin-top: 15px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .hero button:hover {
+            background-color: #c0392b;
+        }
+
+        /* Produits Section */
+        .products {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .products h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .product {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 10px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .product h3 {
+            margin: 10px 0;
+            font-size: 1.5rem;
+        }
+
+        .product p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .product:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
         }
     </style>
 </head>
-<body class="flex flex-col justify-center items-center h-screen text-gray-800">
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">Roborock</div>
+        <nav>
+            <ul>
+                <li>Accueil</li>
+                <li>Produits</li>
+                <li>Support</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- Logo et Remboursement sécurisé -->
-    <div class="bg-white shadow-md rounded-lg p-6 text-center max-w-md">
-        <!-- Logo et icônes -->
-        <div class="flex justify-center items-center mb-6">
-            <img src="IMG_4054.png" alt="Carte Bancaire" class="h-10 mx-2">
-            <img src="IMG_4055.png" alt="Visa" class="h-10 mx-2">
-            <img src="IMG_4056.png" alt="MasterCard" class="h-10 mx-2">
-            <img src="IMG_4064.png" alt="Stripe" class="h-10 mx-2">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div>
+            <h1>Roborock - Nettoyage Intelligent</h1>
+            <p>Découvrez nos robots aspirateurs performants pour une maison toujours propre.</p>
+            <button>Voir les Produits</button>
         </div>
-        <h1 class="text-lg font-semibold text-blue-500 mb-
+    </section>
+
+    <!-- Produits Section -->
+    <section class="products">
+        <h2>Nos Produits</h2>
+        <div class="product-list">
+            <div class="product">
+                <img src="https://fr.roborock.com/assets/img/product_1.jpg" alt="Roborock S7">
+                <h3>Roborock S7</h3>
+                <p>Aspirateur robot avec lavage sonique.</p>
+            </div>
+            <div class="product">
+                <img src="https://fr.roborock.com/assets/img/product_2.jpg" alt="Roborock S6 MaxV">
+                <h3>Roborock S6 MaxV</h3>
+                <p>Technologie avancée de navigation AI.</p>
+            </div>
+            <div class="product">
+                <img src="https://fr.roborock.com/assets/img/product_3.jpg" alt="Roborock E4">
+                <h3>Roborock E4</h3>
+                <p>Nettoyage rapide et efficace.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Roborock. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
