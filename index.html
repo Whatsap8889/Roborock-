@@ -4,110 +4,130 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roborock - Offres Exceptionnelles</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        /* General Styles */
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f8f8f8;
+            line-height: 1.6;
+            background-color: #f9f9f9;
             color: #333;
-        }
-        h1, h2, h3 {
-            margin: 0;
-            padding: 0;
         }
         a {
             text-decoration: none;
             color: inherit;
         }
-        img {
-            max-width: 100%;
-            border-radius: 8px;
+        ul {
+            list-style: none;
         }
-        /* Navbar */
-        nav {
-            background: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+
+        /* Header with Navigation */
+        header {
+            background-color: #e63946;
+            color: #fff;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        nav a {
-            margin: 0 10px;
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        nav .logo {
+            font-size: 1.8rem;
             font-weight: bold;
         }
-        nav a:hover {
-            color: #e63946;
+        nav ul {
+            display: flex;
         }
-        nav strong {
-            color: #e63946;
-            font-size: 1.5rem;
+        nav ul li {
+            margin-left: 20px;
         }
-        /* Hero Section */
+        nav ul li a {
+            color: #fff;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #ffc107;
+        }
+
+        /* Hero Section with Countdown Timer */
         .hero {
-            background: url('https://source.unsplash.com/1600x900/?newyear') no-repeat center center/cover;
+            background: url('https://source.unsplash.com/1600x900/?newyear,celebration') no-repeat center center/cover;
             color: #fff;
             text-align: center;
             padding: 150px 20px;
-            animation: fadeIn 2s ease-in-out;
+            position: relative;
         }
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 4rem;
+            margin-bottom: 20px;
         }
         .hero p {
             font-size: 1.2rem;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .hero .countdown {
+            font-size: 2rem;
+            background: rgba(0, 0, 0, 0.5);
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 10px;
         }
         .hero button {
-            background: #e63946;
-            color: #fff;
+            background-color: #ffc107;
+            color: #333;
             border: none;
             padding: 15px 30px;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             border-radius: 5px;
             cursor: pointer;
+            transition: background 0.3s;
         }
         .hero button:hover {
-            background: #c92b2b;
+            background-color: #e0a800;
         }
-        /* Discounts Banner */
-        .discount-banner {
-            background: #e63946;
-            color: white;
-            text-align: center;
-            font-size: 1.3rem;
-            font-weight: bold;
-            padding: 10px;
-            animation: slideIn 1.5s ease-in-out;
-        }
-        @keyframes slideIn {
-            from { transform: translateY(-100%); }
-            to { transform: translateY(0); }
-        }
+
         /* Products Section */
         .products {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .products h2 {
+            margin-bottom: 30px;
+            color: #e63946;
+            font-size: 2.5rem;
+        }
+        .product-list {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
-            padding: 40px 20px;
         }
         .product {
-            background: #fff;
-            padding: 20px;
+            background-color: #fff;
             border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s;
             width: 300px;
-            transition: transform 0.3s ease;
+            text-align: center;
         }
         .product:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+        }
+        .product img {
+            width: 100%;
+            height: auto;
         }
         .product h3 {
             margin: 15px 0 10px;
@@ -115,94 +135,70 @@
         }
         .product p {
             color: #777;
+            font-size: 1rem;
+            margin-bottom: 15px;
         }
-        /* Testimonials */
-        .testimonials {
-            background: #ffecec;
-            text-align: center;
-            padding: 40px 20px;
-        }
-        .testimonial {
-            margin: 20px auto;
-            max-width: 800px;
-            font-style: italic;
-            color: #555;
-        }
-        .testimonial strong {
-            display: block;
-            margin-top: 10px;
-            color: #e63946;
-        }
+
         /* Footer */
         footer {
-            background: #333;
-            color: white;
+            background-color: #333;
+            color: #fff;
             text-align: center;
             padding: 20px;
         }
         footer a {
-            color: #e63946;
+            color: #ffc107;
         }
     </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav>
-        <strong>Roborock</strong>
-        <div>
-            <a href="#">Accueil</a>
-            <a href="#products">Produits</a>
-            <a href="#testimonials">Avis Clients</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
 
-    <!-- Discount Banner -->
-    <div class="discount-banner">
-        🎉 Offres de Fin d'Année - Profitez jusqu'à 50% de réduction ! 🎉
-    </div>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <div class="logo">Roborock</div>
+            <ul>
+                <li><a href="#hero">Accueil</a></li>
+                <li><a href="#products">Produits</a></li>
+                <li><a href="#reviews">Avis Clients</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <h1>Roborock - Nettoyage Intelligent</h1>
-        <p>Découvrez nos robots aspirateurs pour une maison propre et intelligente.</p>
-        <button onclick="scrollToSection()">Voir les Produits</button>
+    <section id="hero" class="hero">
+        <h1>🎉 Offres Spéciales de Fin d'Année 🎉</h1>
+        <p>Profitez jusqu'à 50% de réduction sur nos produits Roborock !</p>
+        <div id="countdown" class="countdown">00:00:00</div>
+        <br><br>
+        <button onclick="scrollToProducts()">Voir les Produits</button>
     </section>
 
     <!-- Products Section -->
     <section id="products" class="products">
-        <div class="product">
-            <img src="IMG_4142.jpeg" alt="Roborock S8 Pro Ultra">
-            <h3>Roborock S8 Pro Ultra</h3>
-            <p>Puissance et autonomie exceptionnelles.</p>
-        </div>
-        <div class="product">
-            <img src="IMG_4143.jpeg" alt="Roborock S7 MaxV Ultra">
-            <h3>Roborock S7 MaxV Ultra</h3>
-            <p>Navigation AI avec lavage avancé.</p>
-        </div>
-        <div class="product">
-            <img src="IMG_4144.jpeg" alt="Roborock S8+">
-            <h3>Roborock S8+</h3>
-            <p>Optimisé pour chaque surface.</p>
-        </div>
-        <div class="product">
-            <img src="IMG_4145.jpeg" alt="Roborock S7 Pro Ultra">
-            <h3>Roborock S7 Pro Ultra</h3>
-            <p>Nettoyage rapide et intelligent.</p>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials">
-        <h2>Ce que disent nos clients</h2>
-        <div class="testimonial">
-            "Les robots Roborock ont transformé ma maison. C'est incroyablement efficace et pratique !"
-            <strong>- Jean Dupont</strong>
-        </div>
-        <div class="testimonial">
-            "Un nettoyage sans effort, des résultats parfaits. Je recommande vivement !"
-            <strong>- Marie Claire</strong>
+        <h2>Nos Produits</h2>
+        <div class="product-list">
+            <div class="product">
+                <img src="IMG_4142.jpeg" alt="S8 Pro Ultra">
+                <h3>Roborock S8 Pro Ultra</h3>
+                <p>Le meilleur aspirateur robot intelligent.</p>
+            </div>
+            <div class="product">
+                <img src="IMG_4143.jpeg" alt="S7 MaxV Ultra">
+                <h3>Roborock S7 MaxV Ultra</h3>
+                <p>Technologie AI avancée.</p>
+            </div>
+            <div class="product">
+                <img src="IMG_4144.jpeg" alt="S8+">
+                <h3>Roborock S8+</h3>
+                <p>Puissance et efficacité.</p>
+            </div>
+            <div class="product">
+                <img src="IMG_4145.jpeg" alt="S7 Pro Ultra">
+                <h3>Roborock S7 Pro Ultra</h3>
+                <p>Un nettoyage sans compromis.</p>
+            </div>
         </div>
     </section>
 
@@ -212,7 +208,21 @@
     </footer>
 
     <script>
-        function scrollToSection() {
+        // Countdown Timer
+        const countdown = document.getElementById('countdown');
+        const endDate = new Date(new Date().getTime() + 24 * 60 * 60 * 1000); // 24 hours
+
+        setInterval(() => {
+            const now = new Date();
+            const diff = endDate - now;
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            countdown.textContent = `${hours}h ${minutes}m ${seconds}s`;
+        }, 1000);
+
+        // Scroll to Products
+        function scrollToProducts() {
             document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
         }
     </script>
