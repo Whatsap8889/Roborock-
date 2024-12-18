@@ -5,110 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roborock - Offres Spéciales de Fin d'Année</title>
     <style>
-        /* التهيئة العامة */
+        /* تهيئة عامة */
         body {
-            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #fdfdfd;
-            color: #333;
+            font-family: Arial, sans-serif;
             overflow-x: hidden;
-        }
-
-        /* شريط التنقل */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #fff;
-            padding: 15px 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav a {
-            text-decoration: none;
             color: #333;
-            font-weight: bold;
-            margin: 0 15px;
-            transition: color 0.3s;
+            background-color: #fdfdfd;
         }
 
-        nav a:hover {
-            color: #e63946;
-        }
-
-        nav strong {
-            font-size: 1.5rem;
-            color: #e63946;
-        }
-
-        /* بانر رأس السنة */
-        .new-year-banner {
-            background: url('https://example.com/animated-snow.gif') no-repeat center center/cover;
-            text-align: center;
-            color: #fff;
-            padding: 80px 20px;
-            font-size: 2rem;
-            font-weight: bold;
-            position: relative;
-        }
-
-        .new-year-banner::before {
-            content: "🎉 Joyeuses Fêtes - Remises Exceptionnelles Jusqu'à 50% ! 🎉";
-            position: absolute;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: blink 1.5s infinite;
-        }
-
-        @keyframes blink {
-            0% { opacity: 1; }
-            50% { opacity: 0.5; }
-            100% { opacity: 1; }
-        }
-
-        /* المنتجات */
-        .products {
-            text-align: center;
-            padding: 50px 20px;
-        }
-
-        .products h2 {
-            color: #e63946;
-            margin-bottom: 20px;
-        }
-
-        .product-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .product {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            padding: 15px;
-            transition: transform 0.3s;
-        }
-
-        .product:hover {
-            transform: scale(1.05);
-        }
-
-        .product img {
-            width: 100%;
-            border-radius: 10px;
-        }
-
-        /* تساقط الثلج */
+        /* الثلج المتساقط */
         .snowflakes {
             position: fixed;
             top: 0;
@@ -118,113 +25,237 @@
             pointer-events: none;
             z-index: 999;
         }
-
-        @keyframes snow {
-            to { transform: translateY(100vh); }
-        }
-
         .snowflake {
             position: absolute;
             top: -10px;
             background: white;
             border-radius: 50%;
-            opacity: 0.7;
+            opacity: 0.8;
             animation: snow 10s linear infinite;
+        }
+        @keyframes snow {
+            to { transform: translateY(100vh); }
+        }
+
+        /* رأس الصفحة */
+        header {
+            background-color: #e63946;
+            color: #fff;
+            text-align: center;
+            padding: 10px 20px;
+            font-size: 2rem;
+        }
+
+        /* شريط التنقل */
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #e63946;
+        }
+
+        /* البانر الرئيسي */
+        .hero {
+            text-align: center;
+            background: url('https://example.com/banner.jpg') no-repeat center center/cover;
+            color: #fff;
+            padding: 100px 20px;
+            font-size: 2rem;
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .hero button {
+            background-color: #e63946;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .hero button:hover {
+            background-color: #c92b2b;
+        }
+
+        /* العد التنازلي */
+        #countdown {
+            text-align: center;
+            font-size: 1.5rem;
+            margin: 20px 0;
+            color: #e63946;
+        }
+
+        /* المنتجات */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 50px auto;
+            max-width: 1200px;
+            padding: 20px;
+        }
+
+        .product {
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+            padding: 15px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .product img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+        }
+
+        /* مراجعات العملاء */
+        .testimonials {
+            text-align: center;
+            margin: 50px 0;
+            background-color: #f8f8f8;
+            padding: 30px;
+        }
+
+        /* الأسئلة الشائعة */
+        .faq {
+            max-width: 800px;
+            margin: 30px auto;
+        }
+
+        .faq h3 {
+            background-color: #e63946;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .faq p {
+            display: none;
+            padding: 10px;
+            background-color: #f8f8f8;
         }
 
         /* دليل الموقع */
         .sitemap {
             background-color: #333;
             color: #fff;
-            padding: 30px 20px;
             text-align: center;
+            padding: 30px 10px;
         }
 
         .sitemap a {
             color: #e63946;
-            text-decoration: none;
             margin: 10px;
-            display: inline-block;
+            text-decoration: none;
         }
 
         .sitemap a:hover {
             text-decoration: underline;
         }
 
+        /* التذييل */
         footer {
-            background-color: #111;
-            color: #fff;
             text-align: center;
+            background-color: #111;
+            color: white;
             padding: 15px;
         }
     </style>
 </head>
 <body>
+    <!-- تأثير الثلج -->
+    <div class="snowflakes">
+        <div class="snowflake" style="left: 10%; width: 10px; height: 10px;"></div>
+        <div class="snowflake" style="left: 20%; width: 8px; height: 8px;"></div>
+        <div class="snowflake" style="left: 30%; width: 15px; height: 15px;"></div>
+    </div>
+
+    <!-- رأس الصفحة -->
+    <header>Roborock - Offres Exceptionnelles</header>
+
     <!-- شريط التنقل -->
     <nav>
-        <div><strong>Roborock</strong></div>
-        <div>
-            <a href="#home">Accueil</a>
-            <a href="#products">Produits</a>
-            <a href="#support">Support</a>
-            <a href="#contact">Contact</a>
-        </div>
+        <a href="#home">Accueil</a>
+        <a href="#products">Produits</a>
+        <a href="#testimonials">Avis Clients</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
     </nav>
 
-    <!-- بانر رأس السنة -->
-    <section class="new-year-banner" id="home">
-        🎊 Célébrez la Nouvelle Année avec Roborock 🎊
+    <!-- البانر -->
+    <section class="hero" id="home">
+        🎊 Joyeuses Fêtes avec Roborock 🎊
+        <p>Découvrez nos offres spéciales de fin d'année.</p>
+        <button onclick="scrollToProducts()">Voir les Produits</button>
     </section>
 
-    <!-- تساقط الثلج -->
-    <div class="snowflakes">
-        <div class="snowflake" style="left: 10%; width: 10px; height: 10px; animation-duration: 8s;"></div>
-        <div class="snowflake" style="left: 20%; width: 8px; height: 8px; animation-duration: 10s;"></div>
-        <div class="snowflake" style="left: 30%; width: 12px; height: 12px; animation-duration: 6s;"></div>
-        <div class="snowflake" style="left: 50%; width: 15px; height: 15px; animation-duration: 7s;"></div>
-        <div class="snowflake" style="left: 70%; width: 8px; height: 8px; animation-duration: 9s;"></div>
-    </div>
+    <!-- العد التنازلي -->
+    <div id="countdown">Offre se termine dans : <span id="timer"></span></div>
 
     <!-- المنتجات -->
     <section class="products" id="products">
-        <h2>Nos Produits en Promotion 🎁</h2>
-        <div class="product-list">
-            <div class="product">
-                <img src="IMG_4142.jpeg" alt="Roborock S8 Pro Ultra">
-                <h3>Roborock S8 Pro Ultra</h3>
-                <p>Performances exceptionnelles pour un nettoyage intelligent.</p>
-            </div>
-            <div class="product">
-                <img src="IMG_4143.jpeg" alt="Roborock S7 MaxV Ultra">
-                <h3>Roborock S7 MaxV Ultra</h3>
-                <p>Technologie avancée de navigation AI.</p>
-            </div>
-            <div class="product">
-                <img src="IMG_4144.jpeg" alt="Roborock S8+">
-                <h3>Roborock S8+</h3>
-                <p>Nettoyage efficace et silencieux.</p>
-            </div>
-            <div class="product">
-                <img src="IMG_4145.jpeg" alt="Roborock S7 Pro Ultra">
-                <h3>Roborock S7 Pro Ultra</h3>
-                <p>Une puissance inégalée pour une maison propre.</p>
-            </div>
+        <div class="product">
+            <img src="IMG_4142.jpeg" alt="S8 Pro Ultra">
+            <h3>Roborock S8 Pro Ultra</h3>
+        </div>
+        <div class="product">
+            <img src="IMG_4143.jpeg" alt="S7 MaxV Ultra">
+            <h3>Roborock S7 MaxV Ultra</h3>
         </div>
     </section>
 
     <!-- دليل الموقع -->
     <section class="sitemap">
-        <h2>Plan du Site</h2>
         <a href="#home">Accueil</a>
         <a href="#products">Produits</a>
-        <a href="#support">Support</a>
-        <a href="#contact">Contact</a>
-        <a href="#about">À Propos</a>
+        <a href="#testimonials">Avis</a>
+        <a href="#faq">FAQ</a>
     </section>
 
-    <!-- تذييل -->
-    <footer>
-        &copy; 2024 Roborock. Tous droits réservés.
-    </footer>
+    <!-- التذييل -->
+    <footer>&copy; 2024 Roborock</footer>
+
+    <!-- سكريبت العد التنازلي -->
+    <script>
+        function scrollToProducts() {
+            document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        const countdown = document.getElementById('timer');
+        const endDate = new Date(new Date().getTime() + 24 * 60 * 60 * 1000);
+        setInterval(() => {
+            const now = new Date();
+            const diff = endDate - now;
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            countdown.textContent = `${hours}h ${minutes}m ${seconds}s`;
+        }, 1000);
+    </script>
 </body>
 </html>
