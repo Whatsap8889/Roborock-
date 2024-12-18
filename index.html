@@ -6,177 +6,100 @@
     <title>Roborock - Offres Exceptionnelles</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        /* General Reset */
+        /* Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         body {
-            font-family: Arial, sans-serif;
             line-height: 1.6;
-            background-color: #f9f9f9;
+            background-color: #fdfdfd;
             color: #333;
         }
         a {
             text-decoration: none;
             color: inherit;
         }
-        img {
-            max-width: 100%;
-            border-radius: 8px;
-        }
 
         /* Header */
         header {
-            background: #e63946;
+            background-color: #e63946;
             color: white;
-            padding: 10px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 10px 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
         header .logo {
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: bold;
         }
         header nav ul {
+            list-style: none;
             display: flex;
+            gap: 20px;
         }
         header nav ul li {
-            margin-left: 20px;
+            font-size: 1.1rem;
+            transition: all 0.3s;
         }
-        header nav ul li a {
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-        header nav ul li a:hover {
+        header nav ul li:hover {
+            transform: scale(1.1);
             color: #ffc107;
-        }
-
-        /* News Ticker */
-        .news-ticker {
-            background: #333;
-            color: white;
-            padding: 10px;
-            white-space: nowrap;
-            overflow: hidden;
-        }
-        .news-ticker span {
-            display: inline-block;
-            animation: scroll-left 15s linear infinite;
-        }
-        @keyframes scroll-left {
-            from { transform: translateX(100%); }
-            to { transform: translateX(-100%); }
         }
 
         /* Hero Section */
         .hero {
-            background: url('https://source.unsplash.com/1600x900/?cleaning,home') no-repeat center center/cover;
-            color: #fff;
+            background: linear-gradient(to right, #e63946, #ff6f61);
+            color: white;
             text-align: center;
-            padding: 150px 20px;
+            padding: 80px 20px;
         }
         .hero h1 {
             font-size: 3.5rem;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease-in;
         }
         .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            animation: fadeIn 1.5s ease-in;
         }
         .hero .countdown {
-            font-size: 1.5rem;
-            background: rgba(0, 0, 0, 0.6);
+            font-size: 2rem;
+            background: rgba(0, 0, 0, 0.3);
             display: inline-block;
             padding: 10px 20px;
             border-radius: 10px;
+            font-weight: bold;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
         }
 
-        /* Products Section */
-        .products {
-            padding: 50px 20px;
-            text-align: center;
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        .products h2 {
-            margin-bottom: 20px;
+
+        /* Main Section */
+        .main {
+            text-align: center;
+            margin: 50px auto;
+        }
+        .main h2 {
             font-size: 2.5rem;
             color: #e63946;
+            margin-bottom: 20px;
         }
-        .product-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-        .product {
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-            width: 300px;
-        }
-        .product:hover {
-            transform: translateY(-5px);
-        }
-        .product img {
-            margin-bottom: 10px;
-        }
-        .product h3 {
-            margin: 10px 0;
-            font-size: 1.5rem;
-        }
-        .product p {
-            color: #777;
-        }
-
-        /* Testimonials */
-        .testimonials {
-            padding: 50px 20px;
-            background: #ffecec;
-            text-align: center;
-        }
-        .testimonial {
-            margin: 20px auto;
-            max-width: 700px;
-            font-style: italic;
-            color: #555;
-        }
-        .testimonial strong {
-            display: block;
-            margin-top: 10px;
-            color: #e63946;
-        }
-
-        /* FAQ Section */
-        .faq {
-            padding: 50px 20px;
-            max-width: 800px;
-            margin: auto;
-        }
-        .faq h2 {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .faq-item {
-            margin-bottom: 15px;
-        }
-        .faq-item h3 {
-            background: #e63946;
-            color: white;
-            padding: 10px;
-            margin: 0;
-            cursor: pointer;
-        }
-        .faq-item p {
-            display: none;
-            background: #f8f8f8;
-            padding: 10px;
+        .main p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
         }
 
         /* Footer */
@@ -185,9 +108,8 @@
             color: white;
             text-align: center;
             padding: 20px;
-        }
-        footer a {
-            color: #ffc107;
+            margin-top: 30px;
+            font-size: 1rem;
         }
     </style>
 </head>
@@ -200,90 +122,43 @@
             <ul>
                 <li><a href="#hero">Accueil</a></li>
                 <li><a href="#products">Produits</a></li>
-                <li><a href="#testimonials">Avis Clients</a></li>
-                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#offers">Offres</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- News Ticker -->
-    <div class="news-ticker">
-        <span>🎉 Offres Exceptionnelles - Profitez jusqu'à 50% de réduction sur nos robots Roborock ! 🎉</span>
-    </div>
-
     <!-- Hero Section -->
-    <section id="hero" class="hero">
-        <h1>Roborock - Offres Exceptionnelles</h1>
-        <p>Des réductions exclusives pour une durée limitée !</p>
+    <section class="hero">
+        <h1>Offres Exceptionnelles</h1>
+        <p>Profitez des réductions jusqu'à <strong>50%</strong> pour célébrer la nouvelle année !</p>
         <div id="countdown" class="countdown">00:00:00</div>
     </section>
 
-    <!-- Products Section -->
-    <section id="products" class="products">
-        <h2>Nos Produits</h2>
-        <div class="product-list">
-            <div class="product">
-                <img src="IMG_4142.jpeg" alt="S8 Pro Ultra">
-                <h3>Roborock S8 Pro Ultra</h3>
-                <p>Puissance et autonomie exceptionnelles.</p>
-            </div>
-            <div class="product">
-                <img src="IMG_4143.jpeg" alt="S7 MaxV Ultra">
-                <h3>Roborock S7 MaxV Ultra</h3>
-                <p>Technologie AI et navigation avancée.</p>
-            </div>
-            <div class="product">
-                <img src="IMG_4144.jpeg" alt="S8+">
-                <h3>Roborock S8+</h3>
-                <p>Nettoyage efficace et intelligent.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section id="testimonials" class="testimonials">
-        <h2>Ce que disent nos clients</h2>
-        <div class="testimonial">
-            "Les robots Roborock sont incroyables! Nettoyage parfait sans effort!"  
-            <strong>- Jean Dupont</strong>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="faq">
-        <h2>Questions Fréquentes</h2>
-        <div class="faq-item">
-            <h3>Quels sont les délais de livraison?</h3>
-            <p>La livraison prend généralement entre 2 et 5 jours ouvrés.</p>
-        </div>
+    <!-- Main Section -->
+    <section class="main">
+        <h2>À Propos des Offres</h2>
+        <p>Découvrez une gamme exceptionnelle de robots nettoyeurs Roborock.</p>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Roborock. Tous droits réservés. | <a href="#">Politique de Confidentialité</a></p>
+        &copy; 2024 Roborock. Tous droits réservés.
     </footer>
 
     <script>
         // Countdown Timer
         const countdown = document.getElementById('countdown');
-        const endDate = new Date(new Date().getTime() + 86400000); // 24 hours
+        const targetDate = new Date(new Date().getTime() + 24 * 60 * 60 * 1000); // 24 hours
 
         setInterval(() => {
             const now = new Date();
-            const diff = endDate - now;
-            const hours = Math.floor(diff / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            const diff = targetDate - now;
+            const hours = String(Math.floor(diff / (1000 * 60 * 60))).padStart(2, '0');
+            const minutes = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+            const seconds = String(Math.floor((diff % (1000  * 60) / 1000)).padStart(2, '0');
             countdown.textContent = `${hours}h ${minutes}m ${seconds}s`;
         }, 1000);
-
-        // FAQ Toggle
-        document.querySelectorAll('.faq-item h3').forEach(item => {
-            item.addEventListener('click', () => {
-                const answer = item.nextElementSibling;
-                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
-            });
-        });
     </script>
 
 </body>
