@@ -425,6 +425,24 @@
         });
 
         // Gestion de la soumission du formulaire de commande
-        const orderForm = document.getElementById("orderForm");
-        orderForm.addEventListener("submit", (event) => {
-            event
+const orderForm = document.getElementById("orderForm");
+orderForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    // Récupérer les informations du formulaire
+    const address = document.getElementById("address").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+
+    // Vérifier si tous les champs sont remplis
+    if (!address || !email || !phone) {
+        alert("Veuillez remplir tous les champs obligatoires.");
+        return;
+    }
+
+    // Simuler le processus de paiement (dans un scénario réel, vous redirigeriez vers une page de paiement sécurisée)
+    alert("Merci pour votre commande ! Vous allez être redirigé vers la page de paiement.");
+
+    // Rediriger vers la page de paiement
+    window.location.href = "paiement.html";
+});
