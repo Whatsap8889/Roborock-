@@ -18,21 +18,24 @@
 
         .header {
             background-color: #0041C2;
-            padding: 20px;
+            padding: 10px;
             color: white;
-        }
-
-        .menu {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .logo {
-            width: 50px;
+        .menu {
+            display: flex;
+            align-items: center;
         }
 
-        .nav button {
+        .logo {
+            width: 40px;
+            margin-right: 20px;
+        }
+
+        .menu button {
             background: none;
             border: none;
             color: white;
@@ -41,8 +44,19 @@
             cursor: pointer;
         }
 
-        .nav button:hover {
+        .menu button:hover {
             text-decoration: underline;
+        }
+
+        .icons {
+            display: flex;
+            align-items: center;
+        }
+
+        .icons img {
+            width: 24px;
+            margin-left: 15px;
+            cursor: pointer;
         }
 
         .account-info {
@@ -116,13 +130,15 @@
 <body>
     <div class="header">
         <div class="menu">
-            <img src="/mnt/data/DD8F4002-82F5-42DF-8178-DBFE707D3B50.jpeg" alt="YouPage Logo" class="logo">
-            <div class="nav">
-                <button>Tableau de bord</button>
-                <button>Modifier compte</button>
-                <button>Ajouter fonds</button>
-                <button>Vendre</button>
-            </div>
+            <img src="/mnt/data/2A4EB0DF-B278-4B21-AB73-7363DE08C7FC.jpeg" alt="YouPage Logo" class="logo">
+            <button>Tableau de bord</button>
+            <button>Modifier compte</button>
+            <button>Ajouter fonds</button>
+            <button>Vendre</button>
+        </div>
+        <div class="icons">
+            <img src="bell-icon.png" alt="Notifications">
+            <img src="cart-icon.png" alt="Cart">
         </div>
     </div>
     <div class="account-info">
