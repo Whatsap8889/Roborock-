@@ -3,286 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roborock - Offres exclusives</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Mon Compte - YouPage</title>
     <style>
-        /* Réinitialisation */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
         }
 
-        /* Styles généraux */
         body {
-            background-color: #f5f5f5;
-            color: #333;
-            line-height: 1.6;
-        }
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-        ul {
-            list-style: none;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
         }
 
-        /* En-tête de la page */
-        header {
-            background-color: #2c3e50;
-            color: #fff;
-            padding: 20px 40px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        .header {
+            background-color: #0041C2;
+            padding: 20px;
+            color: white;
         }
-        .header-content {
+
+        .menu {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
         }
+
         .logo {
-            font-size: 24px;
-            font-weight: 700;
+            width: 50px;
         }
-        nav ul {
-            display: flex;
-        }
-        nav ul li {
-            margin-right: 30px;
-        }
-        nav ul li a {
-            font-size: 16px;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        nav ul li a:hover {
-            color: #e67e22;
-        }
-        .search-cart {
-            display: flex;
-            align-items: center;
-        }
-        .search {
-            position: relative;
-            margin-right: 20px;
-        }
-        .search input {
-            padding: 8px 12px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 14px;
-        }
-        .search button {
-            position: absolute;
-            top: 50%;
-            right: 8px;
-            transform: translateY(-50%);
-            background-color: transparent;
+
+        .nav button {
+            background: none;
             border: none;
-            color: #666;
+            color: white;
+            font-size: 16px;
+            margin: 0 15px;
             cursor: pointer;
         }
-        .cart {
+
+        .nav button:hover {
+            text-decoration: underline;
+        }
+
+        .account-info {
+            display: flex;
+            justify-content: space-between;
+            padding: 40px 20px;
+        }
+
+        .user-info {
             display: flex;
             align-items: center;
-            color: #e67e22;
         }
-        .cart-count {
-            background-color: #e67e22;
-            color: #fff;
+
+        .avatar {
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 12px;
-            margin-left: 5px;
+            margin-right: 15px;
         }
 
-        /* Section héros */
-        .hero {
-            background-image: linear-gradient(to right, #2980b9, #6dd5fa, #ffffff);
-            color: #fff;
-            text-align: center;
-            padding: 100px 40px;
-        }
-        .hero h1 {
-            font-size: 48px;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-        .hero p {
-            font-size: 24px;
-            margin-bottom: 40px;
-        }
-        .hero .order-btn {
-            display: inline-block;
-            background-color: #e67e22;
-            color: #fff;
-            padding: 12px 24px;
-            border-radius: 4px;
-            font-size: 16px;
-            font-weight: 600;
-            transition: background-color 0.3s;
-        }
-        .hero .order-btn:hover {
-            background-color: #c96b1e;
-        }
-
-        /* Fenêtre modale de commande */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.4);
-        }
-        .modal-content {
-            background-color: #fefefe;
-            margin: 15% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 30%;
-        }
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
+        .username {
+            font-size: 20px;
             font-weight: bold;
         }
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        #orderForm {
+
+        .wallet-info {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            text-align: right;
         }
-        #orderForm input {
+
+        .wallet, .available-for-withdrawal {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .amount {
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .transaction-search {
+            padding: 20px;
+            background-color: white;
+            margin-top: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .transaction-search input[type="text"] {
             width: 100%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            border: 1px solid #ddd;
             border-radius: 4px;
-            box-sizing: border-box;
         }
-        #orderForm button {
-            background-color: #e67e22;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
+
+        .period {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .period input[type="date"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
             border-radius: 4px;
-            cursor: pointer;
-            width: 100%;
-        }
-        #orderForm button:hover {
-            background-color: #c96b1e;
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <div class="logo">Roborock</div>
-            <nav>
-                <ul>
-                    <li><a href="#">Accueil</a></li>
-                    <li><a href="#">Produits</a></li>
-                    <li><a href="#">Offres</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="search-cart">
-                <div class="search">
-                    <input type="text" placeholder="Rechercher...">
-                    <button><i class="fas fa-search"></i></button>
-                </div>
-                <div class="cart">
-                    <i class="fas fa-shopping-cart"></i>
-                    <div class="cart-count">2</div>
-                </div>
+    <div class="header">
+        <div class="menu">
+            <img src="logo.png" alt="YouPage Logo" class="logo">
+            <div class="nav">
+                <button>Tableau de bord</button>
+                <button>Modifier compte</button>
+                <button>Ajouter fonds</button>
+                <button>Vendre</button>
             </div>
         </div>
-    </header>
-
-    <div class="hero">
-        <h1>Offres exclusives Roborock</h1>
-        <p>Profitez des meilleures offres sur nos robots aspirateurs !</p>
-        <button class="order-btn">Acheter maintenant</button>
     </div>
-
-    <!-- Fenêtre modale de commande -->
-    <div id="orderModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <form id="orderForm">
-                <input type="text" id="address" placeholder="Adresse" required>
-                <input type="email" id="email" placeholder="E-mail" required>
-                <input type="tel" id="phone" placeholder="Téléphone" required>
-                <button type="submit">Passer la commande</button>
-            </form>
+    <div class="account-info">
+        <div class="user-info">
+            <img src="user-avatar.png" alt="User Avatar" class="avatar">
+            <span class="username">Marafimod3</span>
+        </div>
+        <div class="wallet-info">
+            <div class="wallet">
+                <span>YouWallet</span>
+                <span class="amount">12.00 €</span>
+            </div>
+            <div class="available-for-withdrawal">
+                <span>Disponible pour les versements</span>
+                <span class="amount">12.00 €</span>
+            </div>
         </div>
     </div>
-
-    <script>
-        // Gestion de l'affichage de la fenêtre modale
-        const orderModal = document.getElementById("orderModal");
-        const orderButtons = document.querySelectorAll(".order-btn");
-        const closeModal = document.getElementsByClassName("close")[0];
-
-        orderButtons.forEach(button => {
-            button.addEventListener("click", () => {
-                orderModal.style.display = "block";
-            });
-        });
-
-        closeModal.addEventListener("click", () => {
-            orderModal.style.display = "none";
-        });
-
-        window.addEventListener("click", (event) => {
-            if (event.target == orderModal) {
-                orderModal.style.display = "none";
-            }
-        });
-
-        // Gestion de la soumission du formulaire de commande
-        const orderForm = document.getElementById("orderForm");
-        orderForm.addEventListener("submit", (event) => {
-            event.preventDefault();
-
-            // Récupérer les informations du formulaire
-            const address = document.getElementById("address").value;
-            const email = document.getElementById("email").value;
-            const phone = document.getElementById("phone").value;
-
-            // Vérifier si tous les champs sont remplis
-            if (!address || !email || !phone) {
-                alert("Veuillez remplir tous les champs obligatoires.");
-                return;
-            }
-
-            // Simuler le processus de paiement (dans un scénario réel, vous redirigeriez vers une page de paiement sécurisée)
-            alert("Merci pour votre commande ! Vous allez être redirigé vers la page de paiement.");
-
-            // Rediriger vers la page de livraison
-            window.location.href = "livraison.html";
-        });
-    </script>
+    <div class="transaction-search">
+        <input type="text" placeholder="Rechercher code, transaction, formulaire, outil, client">
+        <div class="period">
+            <label for="start-date">Période de</label>
+            <input type="date" id="start-date">
+            <label for="end-date">à</label>
+            <input type="date" id="end-date">
+        </div>
+    </div>
 </body>
 </html>
