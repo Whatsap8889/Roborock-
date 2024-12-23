@@ -18,7 +18,7 @@
 
         .header {
             background-color: #0041C2;
-            padding: 10px 20px;
+            padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -30,9 +30,11 @@
             align-items: center;
         }
 
+        /* الشعار */
         .logo {
             width: 40px;
             margin-right: 20px;
+            cursor: pointer;
         }
 
         .menu button {
@@ -40,14 +42,16 @@
             border: none;
             color: white;
             font-size: 16px;
-            margin: 0 15px;
+            margin: 0 20px;
             cursor: pointer;
         }
 
+        /* إضافة تأثير hover على الأزرار */
         .menu button:hover {
             text-decoration: underline;
         }
 
+        /* إعداد الأيقونات */
         .icons {
             display: flex;
             align-items: center;
@@ -55,10 +59,11 @@
 
         .icons img {
             width: 24px;
-            margin-left: 15px;
+            margin-left: 20px;
             cursor: pointer;
         }
 
+        /* إعداد المعلومات */
         .account-info {
             display: flex;
             justify-content: space-between;
@@ -130,7 +135,7 @@
 <body>
     <div class="header">
         <div class="menu">
-            <!-- إضافة أيقونة الهامبرغر -->
+            <!-- أيقونة الهامبرغر والشعار -->
             <img src="/mnt/data/FB54599F-33BD-4BD4-8ECF-4D57C1098DD8.jpeg" alt="Menu" class="logo">
             <!-- الأزرار -->
             <button>Tableau de bord</button>
@@ -138,12 +143,14 @@
             <button>Ajouter fonds</button>
             <button>Vendre</button>
         </div>
-        <!-- أيقونات الإشعارات والعربة -->
+        <!-- الأيقونات في الجهة اليمنى -->
         <div class="icons">
-            <img src="/mnt/data/BFD02E73-8183-4349-854A-4297750E58B6.jpeg" alt="Notifications">
-            <img src="/mnt/data/BFD02E73-8183-4349-854A-4297750E58B6.jpeg" alt="Cart">
+            <img src="/mnt/data/FB054E74-528A-4307-9436-D3AF04414857.jpeg" alt="Notifications">
+            <img src="/mnt/data/FB054E74-528A-4307-9436-D3AF04414857.jpeg" alt="Cart">
         </div>
     </div>
+
+    <!-- معلومات الحساب -->
     <div class="account-info">
         <div class="user-info">
             <img src="user-avatar.png" alt="User Avatar" class="avatar">
@@ -160,6 +167,8 @@
             </div>
         </div>
     </div>
+
+    <!-- البحث وفلترة المعاملات -->
     <div class="transaction-search">
         <input type="text" placeholder="Rechercher code, transaction, formulaire, outil, client">
         <div class="period">
