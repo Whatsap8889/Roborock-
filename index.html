@@ -16,6 +16,7 @@
             background-color: #f4f6f9;
         }
 
+        /* تصميم الشريط العلوي */
         .header {
             background-color: #0041C2;
             padding: 15px 20px;
@@ -25,12 +26,12 @@
             color: white;
         }
 
+        /* إعداد الأزرار في الشريط العلوي */
         .menu {
             display: flex;
             align-items: center;
         }
 
-        /* الشعار */
         .logo {
             width: 40px;
             margin-right: 20px;
@@ -44,14 +45,14 @@
             font-size: 16px;
             margin: 0 20px;
             cursor: pointer;
+            text-transform: uppercase;
         }
 
-        /* إضافة تأثير hover على الأزرار */
         .menu button:hover {
             text-decoration: underline;
         }
 
-        /* إعداد الأيقونات */
+        /* تنسيق الأيقونات في الجهة اليمنى */
         .icons {
             display: flex;
             align-items: center;
@@ -63,7 +64,7 @@
             cursor: pointer;
         }
 
-        /* إعداد المعلومات */
+        /* تنسيق معلومات الحساب */
         .account-info {
             display: flex;
             justify-content: space-between;
@@ -103,6 +104,7 @@
             font-weight: bold;
         }
 
+        /* تصميم البحث وفلترة المعاملات */
         .transaction-search {
             padding: 20px;
             background-color: white;
@@ -135,7 +137,7 @@
 <body>
     <div class="header">
         <div class="menu">
-            <!-- أيقونة الهامبرغر والشعار -->
+            <!-- إضافة الشعار -->
             <img src="/mnt/data/FB54599F-33BD-4BD4-8ECF-4D57C1098DD8.jpeg" alt="Menu" class="logo">
             <!-- الأزرار -->
             <button>Tableau de bord</button>
@@ -143,14 +145,13 @@
             <button>Ajouter fonds</button>
             <button>Vendre</button>
         </div>
-        <!-- الأيقونات في الجهة اليمنى -->
+        <!-- أيقونات في الجهة اليمنى -->
         <div class="icons">
             <img src="/mnt/data/FB054E74-528A-4307-9436-D3AF04414857.jpeg" alt="Notifications">
             <img src="/mnt/data/FB054E74-528A-4307-9436-D3AF04414857.jpeg" alt="Cart">
         </div>
     </div>
 
-    <!-- معلومات الحساب -->
     <div class="account-info">
         <div class="user-info">
             <img src="user-avatar.png" alt="User Avatar" class="avatar">
@@ -168,7 +169,6 @@
         </div>
     </div>
 
-    <!-- البحث وفلترة المعاملات -->
     <div class="transaction-search">
         <input type="text" placeholder="Rechercher code, transaction, formulaire, outil, client">
         <div class="period">
